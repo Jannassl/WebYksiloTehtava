@@ -1,0 +1,32 @@
+html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+  }
+
+nav {
+    display: block;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    /* Add styles here */
+  }
+  
+  /* Medium & large screens */
+  @media (min-width: 601px) {
+    /* Add styles here */
+  }
+  
+  /* Medium screens */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    /* Add styles here */
+  }
+  
+  /* Large screens */
+  @media (min-width: 1025px) {
+    /* Add styles here */
+  }
