@@ -5,16 +5,17 @@ html {
   body {
     font-family: Helvetica, Arial, sans-serif;
     color: #333;
-    background-color: rgb(212, 210, 210);
-    
+    background-color:#fff1e6;
   }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid #CB997E;
+    border-radius: 12px;
 }
+
 header h1{
     padding-left: 1rem;
 }
@@ -24,35 +25,77 @@ nav {
     gap: 10px;
     padding: 1rem;
 }
-nav a {
-    text-decoration: none;
+nav button {
+  background-color: #CB997E;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  padding: 5px 10px;
 }
-nav a:hover {
+
+
+nav button:hover {
     
     background-color: darkgray;
+    color: black;
     
 }
 #map {
-    height: 400px;
-    width: 60%;
-    border: 2px solid whitesmoke;
+    height: 350px;
+    width: 55%;
+    border: 2px solid #CB997E;
+    border-radius: 12px;
 }
 main {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 8px;
     padding: 8px;
-    border: 2px solid black;
+    border: 2px solid #CB997E;
     justify-content: space-between;
     gap: 10px;
+    border-radius: 12px;
     
 }
 #information {
-    width: 40%;
-    border: 2px solid whitesmoke;
+    width: 45%;
+    border: 2px solid #CB997E;
+    border-radius: 12px;
+}
+#Restaurants {
+  border: 2px solid #CB997E;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 12px;
 }
 
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+#target1 {
+  text-align: ;
+}
+section {
+  height: 300px;
+  overflow: auto;
+}
+section::-webkit-scrollbar {
+  width: 12px;
+}
 
-
+section::-webkit-scrollbar-thumb {
+  background-color: #CB997E; 
+  border-radius: 12px;
+}
 
 
 
