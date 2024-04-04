@@ -34,6 +34,7 @@ async function getRestaurants() {
                 <p>tel: ${restaurant.phone} </p>
                 <p>id:  ${restaurant._id}</p>
                 `);
+                
             
                 marker.on('click', async function() {
                             
@@ -53,8 +54,6 @@ async function getRestaurants() {
 }
 
 
-//getRestaurants();
-
 async function getDailyMenu(id, language){
     try{
         const response = await fetch(`https://10.120.32.94/restaurant/api/v1/restaurants/daily/${id}/${language}`);
@@ -71,5 +70,5 @@ async function getDailyMenu(id, language){
 
 
 
-
-
+getRestaurants();
+getDailyMenu();
