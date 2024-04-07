@@ -10,6 +10,57 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let restaurants = []
+let tableElement = document.querySelector('table');
+let loginButton = document.getElementById("login_btn");
+let registerButton = document.getElementById("register_btn");
+let dialog = document.querySelector("dialog");
+
+loginButton.addEventListener('click', event => {
+    dialog.innerHTML = " ";
+    dialog.insertAdjacentHTML('beforeend', ` 
+    <form id="loginForm">
+        <button id="close_btn" style="float: right;">X</button>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    `);
+    dialog.showModal();
+    document.getElementById("close_btn").addEventListener('click', function(event) {
+        event.preventDefault();
+        dialog.close();
+    });
+});
+
+
+registerButton.addEventListener('click', event => {
+    dialog.innerHTML = " ";
+    dialog.insertAdjacentHTML('beforeend', ` 
+    <form id="loginForm">
+        <button id="close_btn" style="float: right;">X</button>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    `);
+    dialog.showModal();
+    document.getElementById("close_btn").addEventListener('click', function(event) {
+        event.preventDefault();
+        dialog.close();
+    });
+});
+
+document.getElementById("close_btn").addEventListener('click', function(event) {
+    event.preventDefault();
+    dialog.close();
+});
+
+
+
 async function getRestaurants() {
     try {
         const response = await fetch("https://10.120.32.94/restaurant/api/v1/restaurants");
@@ -24,7 +75,6 @@ async function getRestaurants() {
             restaurants.sort((a, b) => {
                 return a.name.localeCompare(b.name);
             });
-
             
             for(let restaurant of restaurants){
                 let lat = restaurant.location.coordinates[1];
@@ -34,6 +84,13 @@ async function getRestaurants() {
                 <p>tel: ${restaurant.phone} </p>
                 <p>id:  ${restaurant._id}</p>
                 `);
+                let tableRow = `<tr>
+                                    <td>${restaurant.name}</td>
+                                    <td>${restaurant.address}</td>
+                                    <td id="target1">${lat}, ${lng}</td>
+                                    <td id="target1"><input type="checkbox"></td>
+                                </tr>`;
+                tableElement.insertAdjacentHTML('beforeend', tableRow);
                 
             
                 marker.on('click', async function() {
@@ -46,13 +103,13 @@ async function getRestaurants() {
                         <p>${menu.courses[0].name}</p>
                     `;
                 });
+                
             }
         }
     } catch (error) {
         console.log("Error: ", error);
     }
 }
-
 
 async function getDailyMenu(id, language){
     try{
@@ -67,6 +124,7 @@ async function getDailyMenu(id, language){
         console.log("Error: ", error);
     }
 }
+
 
 
 

@@ -25,7 +25,7 @@ nav {
     gap: 10px;
     padding: 1rem;
 }
-nav button {
+button {
   background-color: #CB997E;
   color: white;
   border: none;
@@ -40,7 +40,7 @@ nav button {
 }
 
 
-nav button:hover {
+button:hover {
     
     background-color: darkgray;
     color: black;
@@ -96,12 +96,6 @@ section::-webkit-scrollbar-thumb {
   background-color: #CB997E; 
   border-radius: 12px;
 }
-
-
-
-
-
-
 /* Small screens */
 @media (max-width: 600px) {
     /* Add styles here */
