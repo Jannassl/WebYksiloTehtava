@@ -15,49 +15,7 @@ let loginButton = document.getElementById("login_btn");
 let registerButton = document.getElementById("register_btn");
 let dialog = document.querySelector("dialog");
 
-loginButton.addEventListener('click', event => {
-    dialog.innerHTML = " ";
-    dialog.insertAdjacentHTML('beforeend', ` 
-    <form id="loginForm">
-        <button id="close_btn" style="float: right;">X</button>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Submit">
-    </form>
-    `);
-    dialog.showModal();
-    document.getElementById("close_btn").addEventListener('click', function(event) {
-        event.preventDefault();
-        dialog.close();
-    });
-});
 
-
-registerButton.addEventListener('click', event => {
-    dialog.innerHTML = " ";
-    dialog.insertAdjacentHTML('beforeend', ` 
-    <form id="loginForm">
-        <button id="close_btn" style="float: right;">X</button>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Submit">
-    </form>
-    `);
-    dialog.showModal();
-    document.getElementById("close_btn").addEventListener('click', function(event) {
-        event.preventDefault();
-        dialog.close();
-    });
-});
-
-document.getElementById("close_btn").addEventListener('click', function(event) {
-    event.preventDefault();
-    dialog.close();
-});
 
 
 
@@ -129,4 +87,44 @@ async function getDailyMenu(id, language){
 
 
 getRestaurants();
-getDailyMenu();
+//getDailyMenu();
+
+loginButton.addEventListener('click', event => {
+    dialog.innerHTML = " ";
+    dialog.insertAdjacentHTML('beforeend', ` 
+    <form id="loginForm">
+        <button id="close_btn" style="float: right;">X</button>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    `);
+    dialog.showModal();
+    document.getElementById("close_btn").addEventListener('click', function(event) {
+        event.preventDefault();
+        dialog.close();
+    });
+});
+
+
+registerButton.addEventListener('click', event => {
+    dialog.innerHTML = " ";
+    dialog.insertAdjacentHTML('beforeend', ` 
+    <form id="loginForm">
+        <button id="close_btn" style="float: right;">X</button>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    `);
+    dialog.showModal();
+    document.getElementById("close_btn").addEventListener('click', function(event) {
+        event.preventDefault();
+        dialog.close();
+    });
+});
+
