@@ -54,11 +54,12 @@ async function getRestaurants() {
                 marker.on('click', async function() {
                             
                     const menu = await getDailyMenu(restaurant._id, 'fi'); // Jos ongelmia niin tämä oli 'en' 
+                    const coursesHTML = menu.courses.map(course => `<p>${course.name}/ Diets: ${course.diets}</p>`).join('');
                     document.getElementById('information').innerHTML = `
                         <h2>${restaurant.name}</h2>
                         <p>${restaurant.address}</p>
                         <h3>Menu</h3>
-                        <p>${menu.courses[0].name}</p>
+                        ${coursesHTML}
                     `;
                 });
                 
