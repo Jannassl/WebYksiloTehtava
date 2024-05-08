@@ -4,5 +4,5 @@ import { makeRows } from './tableRows.js';
 
 
 getRestaurants();
-
+makeRows();
 
