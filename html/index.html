@@ -11,9 +11,10 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
     <link rel="stylesheet" href="/css/index.css">
-    <script type="module" src="/js/app.js" defer></script>
+    
+    
 </head>
-<body>
+<body>  
     
     <header>
         <h1>Opiskelijaravintolat</h1>
@@ -21,7 +22,9 @@
             <button id="login_btn">Kirjaudu</button>
             <button id="register_btn">Rekisteröidy</button>
         </nav>
-        <dialog></dialog>
+        <dialog id="loginForm"></dialog>
+        <dialog id="registerForm"></dialog>
+        
     </header>
     
     <main>
@@ -33,6 +36,7 @@
         <button id="filter">filter</button>
         <h2>Ravintolat</h2>
         <p> Ravintoloiden nimi ja osoite tähän listana lähimmästä kauimpaan. Highlight valitulle ravintolalle</p>
+        <div id="message"></div>
         <table id="targetTable">
             <tr>
                 <th> Nimi </th>
@@ -42,6 +46,12 @@
             </tr>
         </table>
     </section>
+
+    
+    <script type="module" src="/js/maps.js"></script>
+    <script type="module" src="/js/tableRows.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/register.js"></script>
 
    
     

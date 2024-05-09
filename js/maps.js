@@ -10,10 +10,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 //let restaurants = []    
-let tableElement = document.querySelector('table');
-let loginButton = document.getElementById("login_btn");
-let registerButton = document.getElementById("register_btn");
-let dialog = document.querySelector("dialog");
+
 
 
 
@@ -117,44 +114,9 @@ export async function getWeeklyMenu(id, language){
 
 
 
-//getRestaurants();
+getRestaurants();
 
 
-loginButton.addEventListener('click', event => {
-    dialog.innerHTML = " ";
-    dialog.insertAdjacentHTML('beforeend', ` 
-    <form id="loginForm">
-        <button id="close_btn" style="float: right;">X</button>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Submit">
-    </form>
-    `);
-    dialog.showModal();
-    document.getElementById("close_btn").addEventListener('click', function(event) {
-        event.preventDefault();
-        dialog.close();
-    });
-});
 
 
-registerButton.addEventListener('click', event => {
-    dialog.innerHTML = " ";
-    dialog.insertAdjacentHTML('beforeend', ` 
-    <form id="loginForm">
-        <button id="close_btn" style="float: right;">X</button>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Submit">
-    </form>
-    `);
-    dialog.showModal();
-    document.getElementById("close_btn").addEventListener('click', function(event) {
-        event.preventDefault();
-        dialog.close();
-    });
-});
+

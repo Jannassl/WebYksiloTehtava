@@ -33,3 +33,4 @@ export async function makeRows(){
         console.log("Error: ", error);
     }
 }
+makeRows();
