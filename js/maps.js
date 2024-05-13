@@ -30,6 +30,7 @@ export async function getRestaurants() {
             restaurants.sort((a, b) => {
                 return a.name.localeCompare(b.name);
             });
+            console.log(data);
             
             
             for(let restaurant of restaurants){

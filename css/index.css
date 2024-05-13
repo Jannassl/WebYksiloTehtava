@@ -60,6 +60,13 @@ button {
   padding: 5px 10px;
   margin: 0.2rem;
 }
+#logout_btn{
+  display: none;
+}
+#profileButton{
+  display: none;
+}
+
 #loginForm input[type="submit"] {
   background-color: #CB997E;
   color: white;
@@ -134,11 +141,22 @@ dialog {
   padding: 1rem;
   justify-content: center;
 }
-#close_btn {
+#login_close_btn {
   position: absolute;
   top: 10px;
   right: 10px;
 }
+#register_close_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#closeProfile {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 #loginForm {
   padding-top: 20px; /* adjust as needed */
 }
@@ -146,6 +164,30 @@ dialog {
   margin-bottom: 1rem;
 }
 
+#registerForm {
+  padding-top: 20px; /* adjust as needed */
+}
+#registerForm > * {
+  margin-bottom: 1rem;
+}
+
+#usernameBox {
+  font-weight: bold;
+}
+#emailBox{
+  font-weight: bold;
+}
+#favoriteRestaurant {
+  font-weight: bold;
+}
+#napit {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#tallenna {
+  display: none;
+}
 
 section::-webkit-scrollbar {
   width: 12px;
@@ -155,23 +197,44 @@ section::-webkit-scrollbar-thumb {
   background-color: #CB997E; 
   border-radius: 12px;
 }
-/* Small screens */
-@media (max-width: 600px) {
-    /* Add styles here */
-  }
+footer {
+  text-align: center;
+  padding: 3rem;
   
-  /* Medium & large screens */
-  @media (min-width: 601px) {
-    /* Add styles here */
+}
+@media only screen and (max-width: 600px) {
+  body {
+      font-size: 12px;
   }
-  
-  /* Medium screens */
-  @media (min-width: 601px) and (max-width: 1024px) {
-    /* Add styles here */
+  #menusBox {
+      height: 100px;
   }
-  
-  /* Large screens */
-  @media (min-width: 1025px) {
-    /* Add styles here */
-  }
+}
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+      font-size: 14px;
+  }
+  #menusBox {
+      height: 200px;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+  body {
+      font-size: 16px;
+  }
+  #menusBox {
+      height: 300px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+      font-size: 18px;
+  }
+  #menusBox {
+      height: 400px;
+  }
+}
+ 

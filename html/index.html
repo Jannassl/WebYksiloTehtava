@@ -21,9 +21,56 @@
         <nav>
             <button id="login_btn">Kirjaudu</button>
             <button id="register_btn">Rekisteröidy</button>
+            <button id="profile_btn">Profiili</button>
+            <button id="logout_btn">Kirjaudu ulos</button>
         </nav>
-        <dialog id="loginForm"></dialog>
-        <dialog id="registerForm"></dialog>
+        <dialog id="loginDialog">
+            <form id="loginForm">
+                <button id="login_close_btn">X</button>
+                <div class="input-group">
+                    <label for="loginUsername">Käyttäjänimi:</label><br>
+                    <input type="text" id="loginUsername" name="username">
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password:</label><br>
+                    <input type="password" id="loginPassword" name="password">
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+
+        </dialog>
+        <dialog id="registerDialog">
+            <form id="registerForm">
+                <button id="register_close_btn" style="float: right;">X</button>
+                <label for="registerUsername">Username:</label><br>
+                <input type="text" id="registerUsername" name="username"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="registerPassword">Password:</label><br>
+                <input type="password" id="registerPassword" name="password"><br>
+                <label for="confirmPassword">Confirm Password:</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </dialog>
+        <dialog id="profileModal">
+            <button id="closeProfile">&#9932;</button>
+            <h1>Profiili</h1>
+            <div id="profiilikuva">
+                <img id="profilePicture" src="" alt="Profile Picture">
+                <input type="file" id="profilePictureInput" accept="image/*">
+            </div>
+            <p>Käyttäjänimi: </p>
+            <p id="usernameBox"></p>
+            <p>Sähköposti: </p>
+            <p id="emailBox"></p>
+            <p>Suosikkiravintola:</p>
+            <p id="favoriteRestaurant"></p>
+            <div id="napit">
+                <button id="muokkaa">Muokkaa</button>
+                <button id="tallenna">Tallenna</button>
+            </div>
+        </dialog>
         
     </header>
     
@@ -33,25 +80,46 @@
         
     </main>
     <section id="Restaurants">
-        <button id="filter">filter</button>
+        <label for="city"> Syötä kaupunki</label><br>
+        <input type="text" name="cityName" id="city">
+        <button id="byCity"> Suodata kaupungin mukaan</button>
+        <label for="provider">Palveluntarjoaja</label>
+        <select name="provider" id="provider">
+            <option value="default"></option>
+            <option value="Compass Group">Compass Group</option>
+            <option value="Sodexo">Sodexo</option>
+        </select>
+        <button id="palauta"> palauta</button>
+        
         <h2>Ravintolat</h2>
         <p> Ravintoloiden nimi ja osoite tähän listana lähimmästä kauimpaan. Highlight valitulle ravintolalle</p>
         <div id="message"></div>
         <table id="targetTable">
-            <tr>
-                <th> Nimi </th>
-                <th> Osoite </th>
-                <th> Etäisyys </th>
-                <th> Lisää suosikiksi </th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Nimi</th>
+                    <th>Osoite</th>
+                    <th>Kaupunki</th>
+                    <th>Palveluntarjoaja</th>
+                    <th>Lisää suosikiksi</th>
+                </tr>
+            </thead>
+            <tbody id="targetTableBody">
+               
+            </tbody>
         </table>
     </section>
+
+    <footer>
+        Opiskelijaravintolat 2024 ©
+    </footer>
 
     
     <script type="module" src="/js/maps.js"></script>
     <script type="module" src="/js/tableRows.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/register.js"></script>
+    <script src="/js/profiili.js"></script>
 
    
     
