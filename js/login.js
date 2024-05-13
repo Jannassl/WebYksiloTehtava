@@ -42,6 +42,7 @@ logoutBtn.addEventListener('click', function() {
         let userData = JSON.parse(sessionStorage.getItem('data'));
         let usernameLogged = userData.data.username;
         console.log("User logged out:", usernameLogged);
+        sessionStorage.removeItem('data');
         localStorage.removeItem(usernameLogged);
         localStorage.removeItem(usernameLogged + 'favorite');
         localStorage.removeItem('favorites');
@@ -50,17 +51,11 @@ logoutBtn.addEventListener('click', function() {
         usernameBox.textContent = '';
         favoriteRestaurant.textContent = '';
 
-        profilePicture.src = '';
-        profilePictureInput.value = '';
-
+        // Update the display properties of the buttons
         loginButton.style.display = 'block';
         registerBtn.style.display = 'block';
-
-        this.style.display = 'none';
-
-        sessionStorage.clear();
-    } else {
-        console.log("Ei käyttäjää kirjautuneena");
+        profileBtn.style.display = 'none';
+        logoutBtn.style.display = 'none';
     }
 });
 
