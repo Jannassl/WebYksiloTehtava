@@ -39,6 +39,7 @@ export async function makeRows() {
             let row = document.getElementById(`row-${e.detail}`);
             if (row) {
                 row.classList.add('highlight');
+                row.scrollIntoView({behavior: "smooth", block: "center"});
             }
         });
     } catch (error) {
@@ -70,6 +71,7 @@ for (let i = 0; i < favoriteButtons.length; i++) {
         if (userData) {
             let restaurant = restaurants[i];
             sessionStorage.setItem('favoriteRestaurant', JSON.stringify(restaurant));
+            alert('Ravintola lisätty suosikiksi.');
         } else {
             alert('You need to log in first.');
         }

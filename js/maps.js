@@ -63,7 +63,7 @@ export async function getRestaurants() {
                     document.getElementById('information').innerHTML = `
                         <h2>${restaurant.name}</h2>
                         <p>${restaurant.address}</p>
-                        <button id="toggleMenu">Show Weekly Menu</button>
+                        <button id="toggleMenu">Viikottainen menu</button>
                         <h3>Menu</h3>
                         <div id="menuContent">
                             ${coursesHTML}
@@ -73,7 +73,7 @@ export async function getRestaurants() {
                     document.getElementById('toggleMenu').addEventListener('click', function() {
                         isWeeklyMenuShown = !isWeeklyMenuShown;
                         document.getElementById('menuContent').innerHTML = isWeeklyMenuShown ? weeklyCoursesHTML : coursesHTML;
-                        document.getElementById('toggleMenu').innerText = isWeeklyMenuShown ? 'Show Daily Menu' : 'Show Weekly Menu';
+                        document.getElementById('toggleMenu').innerText = isWeeklyMenuShown ? 'Päivän menu' : 'Viikottainen menu';
                     });
                 });
                 

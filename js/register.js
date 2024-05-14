@@ -7,6 +7,7 @@ let registerDialog = document.querySelector("#registerDialog");
 async function registerFormSubmitHandler(event) {
     event.preventDefault();
     await registerUser(); 
+    registerDialog.close();
 }
 
 registerButton.addEventListener('click', function() {
@@ -16,17 +17,19 @@ registerButton.addEventListener('click', function() {
 
 registerClose.addEventListener('click', function() {
     registerDialog.close();
-    registerForm.removeEventListener('submit', registerFormSubmitHandler);
+    
 });
 
 
-async function checkUsername(username) { // Add username parameter
+async function checkUsername(username) {
     let response = await fetch(`https://10.120.32.94/restaurant/api/v1/users/available/${username}`);
 
-    if (response.ok) { // check if HTTP status is 200-299
+    if (response.ok) {
         let data = await response.json();
-        console.log(data) // Parse the JSON response from the server
-        if (data.available) {
+        console.log(data); // Log the parsed data
+
+        // Check if data.available is the string 'true' or boolean true
+        if (data.available === 'true' || data.available === true) {
             console.log('Username is available');
             return true;
         } else {
@@ -75,6 +78,7 @@ async function registerUser() {
 
     if (response.ok) { // check if HTTP status is 200-299
         console.log('User registered successfully');
+        alert("Rekisteröityminen onnistui, kirjaudu sisään.");
     } else {
         console.log('Failed to register user');
     }

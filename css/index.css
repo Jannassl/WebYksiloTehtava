@@ -80,6 +80,19 @@ button {
   margin: 4px 2px;
   cursor: pointer;
 }
+#registerForm input[type="submit"] {
+  background-color: #CB997E;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 
 button:hover {
@@ -89,7 +102,7 @@ button:hover {
     
 }
 #map {
-    height: 350px;
+    height: 100%;
     width: 55%;
     border: 2px solid #CB997E;
     border-radius: 12px;
@@ -102,18 +115,23 @@ main {
     justify-content: space-between;
     gap: 10px;
     border-radius: 12px;
+    height: 50vh;
     
 }
 #information {
     width: 45%;
     border: 2px solid #CB997E;
     border-radius: 12px;
+    height: 100%;
+    overflow-y: auto;
 }
+
 #Restaurants {
   border: 2px solid #CB997E;
   padding: 8px;
   margin-top: 8px;
   border-radius: 12px;
+  height: 35vh;
 }
 
 table, th, td {
@@ -170,6 +188,9 @@ dialog {
 #registerForm > * {
   margin-bottom: 1rem;
 }
+#muokkausDialog > *{
+  margin-bottom: 1rem;
+}
 
 #usernameBox {
   font-weight: bold;
@@ -185,9 +206,7 @@ dialog {
   justify-content: center;
   gap: 10px;
 }
-#tallenna {
-  display: none;
-}
+
 
 section::-webkit-scrollbar {
   width: 12px;
@@ -197,11 +216,21 @@ section::-webkit-scrollbar-thumb {
   background-color: #CB997E; 
   border-radius: 12px;
 }
+#information::-webkit-scrollbar {
+  width: 12px;
+}
+
+#information::-webkit-scrollbar-thumb {
+  background-color: #CB997E; 
+  border-radius: 12px;
+}
 footer {
   text-align: center;
-  padding: 3rem;
+  padding: 1rem;
+  flex: 0 0 auto;
   
 }
+
 @media only screen and (max-width: 600px) {
   body {
       font-size: 12px;
@@ -209,6 +238,7 @@ footer {
   #menusBox {
       height: 100px;
   }
+  
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {

@@ -6,6 +6,7 @@ let loginDialog = document.querySelector("#loginDialog");
 let loginForm = document.querySelector("#loginForm");
 let loginClose = document.getElementById("login_close_btn");
 
+
 window.onload = function() {
     if (sessionStorage.getItem('data')) {
         // User is logged in
@@ -25,6 +26,7 @@ window.onload = function() {
 async function loginFormSubmitHandler(event) {
     event.preventDefault();
     await loginUser();
+    loginDialog.close();
 }
 
 loginButton.addEventListener('click', function() {
@@ -87,8 +89,12 @@ async function loginUser() {
             profileBtn.style.display = "block";
             
             console.log(" Kirjautuminen onnistui",data);
+            alert("Kirjautuminen onnistui");
+        } else {
+            alert("Kirjautuminen epäonnistui");
         }
     } catch (error) {
         console.error('Error:', error);
+        alert("Kirjautuminen epäonnistui");
     }
 }

@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
     
     
 </head>
@@ -58,7 +58,8 @@
             <h1>Profiili</h1>
             <div id="profiilikuva">
                 <img id="profilePicture" src="" alt="Profile Picture">
-                <input type="file" id="profilePictureInput" accept="image/*">
+                
+                
             </div>
             <p>Käyttäjänimi: </p>
             <p id="usernameBox"></p>
@@ -68,7 +69,23 @@
             <p id="favoriteRestaurant"></p>
             <div id="napit">
                 <button id="muokkaa">Muokkaa</button>
+                
+            </div>
+        </dialog>
+        <dialog id="muokkausDialog">
+            <button id="closeMuokkaus">&#9932;</button>
+            <h1>Muokkaa proofilia</h1>
+            <div id="profiilikuva">
+                <img id="profilePicture" src="" alt="Profile Picture">
+                <input type="file" id="profilePictureInput" accept="image/*">
+            </div>
+            <label for="muokkaaUsername">Muokkaa käyttäjänimeä</label>
+            <input type="text" id="muokkaaUsername" name="username"> <br>
+            <label for="muokkaaEmail">Muokkaa sähköpostia</label>
+            <input type="text" id="muokkaaEmail" name="email"><br>
+            <div id="muokkaaNapit">
                 <button id="tallenna">Tallenna</button>
+                
             </div>
         </dialog>
         
@@ -115,11 +132,11 @@
     </footer>
 
     
-    <script type="module" src="/js/maps.js"></script>
-    <script type="module" src="/js/tableRows.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="/js/register.js"></script>
-    <script src="/js/profiili.js"></script>
+    <script type="module" src="../js/maps.js"></script>
+    <script type="module" src="../js/tableRows.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/register.js"></script>
+    <script src="../js/profiili.js"></script>
 
    
     
